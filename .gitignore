@@ -4,3 +4,7 @@ test.sh
 nvim
 
 spell/
+# Track nvim-pack-lock.json in this personal fork
+# nvim-pack-lock.json
+
+.DS_Store
