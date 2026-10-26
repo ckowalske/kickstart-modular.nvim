@@ -72,4 +72,24 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
+-- Paste without overwriting the current register
+vim.keymap.set({ 'x', 's' }, '<leader>p', [["_dP]], {
+  noremap = true,
+  silent = true,
+  desc = 'Paste without overwriting register',
+})
+
+-- Move by visual line when text wraps, unless a count is given
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", {
+  expr = true,
+  silent = true,
+  desc = 'Move down by visual line',
+})
+
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", {
+  expr = true,
+  silent = true,
+  desc = 'Move up by visual line',
+})
+
 -- vim: ts=2 sts=2 sw=2 et
